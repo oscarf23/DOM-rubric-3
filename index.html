@@ -6,22 +6,101 @@
 <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 
-	<script> document.write("javascript");</script>
+<h1 style="text-align: center;">DOM Rubric 3</h1>
+
+<h2>GetElementsByTagName Example</h2>
+
+<ul id="countries">
+<ul>USA</ul>
+
+<ul>Mexico</ul>
+
+<ul>Italy</ul>
+</ul>
+
+<p>Click below to change the list of countries to the color blue!</p>
+
+<button onclick="blueFunction()">Try it</button>
+
+<script>
+function blueFunction() {
+  var x = document.getElementsByTagName("ul");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.backgroundColor = "blue";
+  }
+}
+</script>
+		
+    
+	<hr>
+
+	<h3>GetElementById Example</h3>
+
 	
-	<div class="sidebar">
-	<ul id="demoparent" class="nav">
-	<li id="demochild"></li>
-	<li><a href="#">link one</a></li>
-	<li><a href="#">link two</a></li>
-	<li><a href="#">link three</a></li>
-	<li><a href="#">link four</a></li>
-	</ul>
-	<p>&nbsp;</p>
-	</div>
+<p id="test">Click below to change me!</p>
+
+<button onclick="IdFunction()">Click me! </button>
+
+<script>
+	function IdFunction() {
+	  document.getElementById("test").innerHTML = "I changed!"
+	}
+	</script>
+
+	<hr>
+
+	<h3>CreateElement Example</h3>
 	
-	
-	
-	
+	<script>
+let newElement = document.createElement("input");
+
+
+document.body.appendChild(newElement);
+	</script>
+
+	<hr>
+
+	<h4>AppendChild Example</h4>
+
+	<li id="SportList">
+		<li>Soccer</li>
+		<li>Basketball</li>
+	</li>
+	  
+	  <button onclick="SportFunction()">Append</button>
+	  
+	  <script>
+	  function SportFunction() {
+		var node = document.createElement("LI");
+		var textnode = document.createTextNode("Golf");
+		node.appendChild(textnode);
+		document.getElementById("SportList").appendChild(node);
+	  }
+	  </script>
+
+	  <hr>
+
+	  <h5>CreateTextNode Example</h5>
+
+	  <p>Click below for a Text Node!</p>
+
+<button onclick="TextFunction()">Try it</button>
+
+<script>
+function TextFunction() {
+  var t = document.createTextNode("Hi! I'm a TextNode");
+  document.body.appendChild(t);
+}
+</script>
+
+
+
+
+
+		
+
+
 	
 	
 	
